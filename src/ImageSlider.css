@@ -86,15 +86,15 @@
     .main-content {
       position: relative;
       z-index: 2;
-      width: min(1180px, 90%);
+      width: min(1360px, 94%);
       min-height: 100vh;
       margin: auto;
       padding: 125px 0 60px;
 
       display: grid;
-      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-columns: minmax(0, 1fr);
       align-items: center;
-      gap: 65px;
+      gap: 0;
     }
 
     /* Left side */
@@ -282,9 +282,9 @@
     /* Tablet */
     @media (max-width: 900px) {
       .main-content {
-        grid-template-columns: 1fr;
-        max-width: 700px;
-        gap: 35px;
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 1360px;
+        gap: 0;
       }
 
       .intro {
@@ -375,7 +375,8 @@
         ========================== */
 
         .gallery-section {
-            padding: 0px 8%;
+          width: 100%;
+          padding: 0;
             text-align: center;
         }
 
@@ -396,7 +397,7 @@
 
         .slider-container {
             width: 100%;
-            max-width: 1100px;
+          max-width: 1280px;
             margin: auto;
             position: relative;
         }

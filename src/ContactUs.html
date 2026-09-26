@@ -448,7 +448,7 @@
         </p>
 
         <div id="successMessage" class="success-message">
-          Thank you! Your enquiry has been submitted successfully.
+          Gmail opened with your enquiry details. Review the message and press Send to submit it.
         </div>
 
         <form id="contactForm">
@@ -549,16 +549,6 @@
 
 
   <script>
-    /*
-      Front-end demo submission.
-
-      IMPORTANT:
-      This HTML page alone cannot securely save data directly into SQL Server.
-      For SQL Server saving, connect this form to your ASP.NET/C# backend/API.
-
-      The JavaScript below only demonstrates successful form submission.
-    */
-
     document.getElementById("contactForm").addEventListener("submit", function (event) {
       event.preventDefault();
 
@@ -569,10 +559,6 @@
         return;
       }
 
-      document.getElementById("successMessage").style.display = "block";
-
-      // Demo only:
-      // Send these values to your ASP.NET/C# backend using fetch().
       const contactData = {
         firstName: document.getElementById("firstName").value.trim(),
         lastName: document.getElementById("lastName").value.trim(),
@@ -581,9 +567,23 @@
         requirement: document.getElementById("requirement").value.trim()
       };
 
-      console.log("Contact enquiry:", contactData);
+      const subject = `New Aarka Interior Enquiry - ${contactData.firstName} ${contactData.lastName}`;
+      const body = [
+        `Name: ${contactData.firstName} ${contactData.lastName}`,
+        `Contact number: ${contactData.contactNo}`,
+        `Email: ${contactData.email}`,
+        "",
+        "Requirement:",
+        contactData.requirement
+      ].join("\n");
+      const gmailUrl = "https://mail.google.com/mail/?view=cm&fs=1"
+        + `&to=${encodeURIComponent("managutte.mayura@gmail.com")}`
+        + `&su=${encodeURIComponent(subject)}`
+        + `&body=${encodeURIComponent(body)}`;
 
-      form.reset();
+      window.open(gmailUrl, "_blank", "noopener,noreferrer");
+      document.getElementById("successMessage").style.display = "block";
+
     });
 
     function BackToHome() {

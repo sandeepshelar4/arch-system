@@ -1,0 +1,110 @@
+.clients {
+  padding: 56px max(4%, calc((100% - 1160px) / 2));
+  background: var(--teal);
+}
+
+.clients .section-head {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.clients .section-head span {
+  display: block;
+  margin-bottom: 14px;
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .2em;
+}
+
+.clients .section-head h2 {
+  color: var(--white);
+  font-size: clamp(38px, 5vw, 62px);
+}
+
+.clients .reviews {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.clients .review {
+  min-height: 150px;
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 18px 20px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+  transition: background-color .2s ease;
+}
+
+.clients .review:hover {
+  background: #f5f8f6;
+}
+
+.clients .video-button {
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  padding: 0 0 0 2px;
+  border: 1px solid var(--teal);
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  font-size: 15px;
+  cursor: pointer;
+  transition: color .2s ease, background-color .2s ease, border-color .2s ease;
+}
+
+.clients .video-button:hover,
+.clients .video-button:focus-visible {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--dark);
+}
+
+.clients .video-button:focus-visible {
+  outline: 2px solid var(--dark);
+  outline-offset: 3px;
+}
+
+.clients .review h3 {
+  margin: 3px 0 8px;
+  color: var(--teal-dark);
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+.clients .review p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+@media (max-width: 800px) {
+  .clients .reviews {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .clients {
+    padding: 40px 4%;
+  }
+
+  .clients .reviews {
+    grid-template-columns: 1fr;
+  }
+
+  .clients .review {
+    min-height: 0;
+    padding: 16px 14px;
+  }
+}

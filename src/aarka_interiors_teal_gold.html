@@ -6,6 +6,8 @@
   <meta name="description" content="Aarka Interiors — residential and commercial interior design, space planning, 3D design, Vastu-based design and complete project execution.">
   <title>Aarka Interiors | Elevate Your Space, Enrich Your Life</title>
   <link rel="stylesheet" href="aarka_interiors_teal_gold.css">
+  <link rel="stylesheet" href="aarka_clients.css">
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 </head>
 <body>
 
@@ -13,11 +15,15 @@
   <header class="site-header" id="top"> 
     <nav class="nav-bar" aria-label="Main navigation">
       <div class="wrap nav-inner">
+        <a class="nav-logo" href="#top" aria-label="Aarka Interiors home">
+          <img src="aarka_logo_2.png" alt="Aarka Interiors">
+        </a>
         <div class="links">
           <a href="#top">Home</a>
           <a href="#about">About Us</a>
           <a href="#services">Services</a>
           <a href="#journey">Process</a>
+          <a href="#clients">Clients</a>
           <a href="#showcase">Projects</a>
           <a href="#contact">Contact Us</a>
         </div>
@@ -37,8 +43,16 @@
           <p>Everything you need under one roof — thoughtful interiors, purposeful planning and complete project execution shaped around the way you live and work.</p>
           <a class="cta" href="#contact">Start a conversation →</a>
         </div>
-        <div class="hero-art" aria-label="Architectural interior visual">
-          <span>INTERIORS • SPACE • LIGHT</span>
+        <div class="hero-art" role="img" aria-label="Animated architectural illustration">
+          <lottie-player
+            class="hero-animation"
+            src="Architect03.json"
+            background="transparent"
+            speed="1"
+            loop
+            autoplay
+            aria-hidden="true"
+          ></lottie-player>
         </div>
       </div>
     </section>
@@ -48,9 +62,8 @@
     <div class="section-head">
       <div>
         <div class="eyebrow">About Me</div>
-        <h2>Creating Spaces<br>That Tell Your Story</h2>
-      </div>
-      <p class="about-copy">Interior design is more than creating beautiful spaces—it is about creating emotions, experiences, and memories.</p>
+        <h2>Creating Spaces That Tell Your Story</h2>
+      </div>      
     </div>
 
     <div class="about-grid">
@@ -139,6 +152,13 @@
       </div>
     </section>
 
+    <section id="clients" class="clients">
+    <div class="section-head"><span>CLIENT REVIEWS</span><h2>What Our Clients Say</h2></div>
+    <div class="reviews">
+      <article class="review"><button class="video-button" aria-label="Play review video">▶</button><div><h3>Client Review 1</h3><p>“A beautiful, thoughtful and well-executed interior experience.”</p></div></article><article class="review"><button class="video-button" aria-label="Play review video">▶</button><div><h3>Client Review 2</h3><p>“A beautiful, thoughtful and well-executed interior experience.”</p></div></article><article class="review"><button class="video-button" aria-label="Play review video">▶</button><div><h3>Client Review 3</h3><p>“A beautiful, thoughtful and well-executed interior experience.”</p></div></article><article class="review"><button class="video-button" aria-label="Play review video">▶</button><div><h3>Client Review 4</h3><p>“A beautiful, thoughtful and well-executed interior experience.”</p></div></article><article class="review"><button class="video-button" aria-label="Play review video">▶</button><div><h3>Client Review 5</h3><p>“A beautiful, thoughtful and well-executed interior experience.”</p></div></article><article class="review"><button class="video-button" aria-label="Play review video">▶</button><div><h3>Client Review 6</h3><p>“A beautiful, thoughtful and well-executed interior experience.”</p></div></article>
+    </div>
+  </section>
+  
     <section id="showcase" class="showcase">
       <div class="wrap">
         <div class="section-head">
@@ -212,6 +232,8 @@ const images = ["AboutMe1.jpeg", "Archana1.jpeg", "Archana2.jpeg"];
 
   function changeImage() {
     const slider = document.getElementById("slider");
+    if (!slider) return;
+
     slider.style.opacity = 0; // fade out
 
     setTimeout(() => {
