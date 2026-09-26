@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Send an interior design enquiry to Aarka Interior.">
+  <title>Enquiry | Aarka Interior</title>
+  <style>
+    :root{--teal:#075b67;--dark:#043f48;--gold:#c9982e;--ivory:#fffdf8;--text:#173d43;--muted:#63777b}*{box-sizing:border-box}body{margin:0;background:var(--ivory);color:var(--text);font-family:Arial,sans-serif;line-height:1.55}.site-header{background:#fff;position:sticky;top:0;z-index:2;box-shadow:0 1px 14px #043f4812}.nav{max-width:1180px;margin:auto;padding:15px 6%;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{font:600 23px Georgia,serif;color:var(--teal);text-decoration:none}.back{color:var(--teal);font-size:14px;font-weight:bold;text-decoration:none}.back:hover{color:var(--gold)}main{min-height:calc(100vh - 64px);padding:75px 6%;background:linear-gradient(115deg,#e3efed 0%,#f8f3e9 56%,#fffdf8 56%)}.enquiry-wrap{max-width:1100px;margin:auto;display:grid;grid-template-columns:.82fr 1.18fr;background:#fff;box-shadow:0 22px 65px #043f4824}.enquiry-copy{padding:64px 12%;color:#fff;background:var(--teal);position:relative;overflow:hidden}.enquiry-copy::after{content:"";position:absolute;width:380px;height:380px;right:-180px;bottom:-150px;border:1px solid #ffffff48;border-radius:50%;box-shadow:0 0 0 35px #ffffff0c,0 0 0 70px #ffffff0a}.eyebrow{color:#f0c865;font-size:12px;letter-spacing:.18em;font-weight:bold}.enquiry-copy h1{font:500 clamp(42px,5vw,66px)/1.06 Georgia,serif;margin:14px 0 22px}.enquiry-copy p{color:#d7e7e8;max-width:390px}.contact-list{margin-top:46px;position:relative;z-index:1}.contact-list div{margin-top:20px;font-size:14px}.contact-list strong{display:block;color:#f0c865;font-size:11px;letter-spacing:.12em}.contact-list a{color:#fff;text-decoration:none}.form-panel{padding:58px 10%}.form-panel h2{font:500 34px/1.15 Georgia,serif;margin:0}.form-panel>p{color:var(--muted);margin:10px 0 30px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.field{display:block}.field.full{grid-column:1/-1}.field span{display:block;margin-bottom:7px;font-size:12px;font-weight:bold;letter-spacing:.08em;color:var(--teal)}input,select,textarea{display:block;width:100%;padding:13px 14px;border:1px solid #cfdcda;background:#fffdf8;color:var(--text);font:15px Arial,sans-serif;outline:0;transition:border .2s,box-shadow .2s}textarea{min-height:132px;resize:vertical}input:focus,select:focus,textarea:focus{border-color:var(--teal);box-shadow:0 0 0 3px #075b6718}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:27px}.submit{border:0;background:var(--gold);color:#fff;padding:14px 25px;font-weight:bold;cursor:pointer;font-size:14px;transition:background .2s}.submit:hover{background:var(--teal)}.submit.sms{background:var(--teal)}.submit.sms:hover{background:var(--dark)}.form-status{display:none;margin-top:18px;padding:12px 14px;font-size:14px}.form-status.success{display:block;background:#e3f1ed;color:#075b67}@media(max-width:760px){main{padding:35px 18px}.enquiry-wrap{grid-template-columns:1fr}.enquiry-copy{padding:47px 11%}.form-panel{padding:42px 11%}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+    .submit.whatsapp{background:#168b4f}.submit.whatsapp:hover{background:#0f6b3c}
+  </style>
+</head>
+<body>
+  <header class="site-header"><nav class="nav"><a class="brand" href="Aarka_Interior_Teal.html">Aarka Interior</a><a class="back" href="Aarka_Interior_Teal.html#contact">← Back to website</a></nav></header>
+  <main>
+    <section class="enquiry-wrap" aria-labelledby="enquiry-title">
+      <aside class="enquiry-copy">
+        <span class="eyebrow">START YOUR PROJECT</span>
+        <h1 id="enquiry-title">Let's create your space.</h1>
+        <p>Share your vision with us. We will review your enquiry and get in touch to discuss the next steps.</p>
+        <div class="contact-list"><div><strong>EMAIL</strong><a href="mailto:aarkainteriors2025@gmail.com">aarkainteriors2025@gmail.com</a></div><div><strong>CALL</strong><a href="tel:+919075767551">+91 9075767551</a></div></div>
+      </aside>
+      <div class="form-panel">
+        <h2>Project enquiry</h2>
+        <p>Fields marked with * are required.</p>
+        <form id="enquiry-form">
+          <div class="form-grid">
+            <label class="field"><span>FULL NAME *</span><input name="name" autocomplete="name" required></label>
+            <label class="field"><span>PHONE NUMBER *</span><input name="phone" type="tel" autocomplete="tel" required></label>
+            <label class="field"><span>EMAIL ADDRESS *</span><input name="email" type="email" autocomplete="email" required></label>
+            <label class="field"><span>PROJECT TYPE *</span><select name="projectType" required><option value="" selected disabled>Select a project type</option><option>Home Interior</option><option>Office Interior</option><option>Space Planning</option><option>3D Design</option><option>Turnkey Project</option><option>Other</option></select></label>
+            <label class="field"><span>PROJECT LOCATION</span><input name="location" autocomplete="address-level2" placeholder="City / area"></label>
+            <label class="field"><span>ESTIMATED BUDGET</span><select name="budget"><option value="">Select a range</option><option>Under ₹5 lakh</option><option>₹5–10 lakh</option><option>₹10–20 lakh</option><option>Above ₹20 lakh</option><option>Prefer to discuss</option></select></label>
+            <label class="field full"><span>TELL US ABOUT YOUR PROJECT *</span><textarea name="message" required placeholder="Briefly describe your space, requirements and preferred timeline."></textarea></label>
+          </div>
+          <div class="actions"><button class="submit" type="submit">Open in Gmail →</button><button id="sms-button" class="submit sms" type="button">Send via SMS →</button><button id="whatsapp-button" class="submit whatsapp" type="button">Send on WhatsApp →</button></div>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+  <script>
+    const form=document.querySelector('#enquiry-form'),status=document.querySelector('#form-status'),smsButton=document.querySelector('#sms-button'),whatsappButton=document.querySelector('#whatsapp-button');
+    function enquiryDetails(){const data=new FormData(form);return {name:data.get('name'),lines:['New Aarka Interior Website Enquiry','','Name: '+data.get('name'),'Phone: '+data.get('phone'),'Email: '+data.get('email'),'Project type: '+data.get('projectType'),'Project location: '+(data.get('location')||'Not provided'),'Estimated budget: '+(data.get('budget')||'Not provided'),'','Project details:',''+data.get('message')]}}
+    form.addEventListener('submit',(event)=>{event.preventDefault();const enquiry=enquiryDetails(),gmail='https://mail.google.com/mail/?view=cm&fs=1&to='+encodeURIComponent('aarkainteriors2025@gmail.com')+'&su='+encodeURIComponent('New Aarka Interior Enquiry — '+enquiry.name)+'&body='+encodeURIComponent(enquiry.lines.join('\n'));window.open(gmail,'_blank','noopener');status.textContent='Gmail has opened with the enquiry details. Please review and press Send.';status.className='form-status success'});
+    smsButton.addEventListener('click',()=>{if(!form.reportValidity())return;const enquiry=enquiryDetails(),sms='sms:+919075767551?body='+encodeURIComponent(enquiry.lines.join('\n'));window.location.href=sms;status.textContent='Your SMS app has opened with the enquiry details. Please review and send the message.';status.className='form-status success'});
+    whatsappButton.addEventListener('click',()=>{if(!form.reportValidity())return;const enquiry=enquiryDetails(),whatsapp='https://wa.me/919075767551?text='+encodeURIComponent(enquiry.lines.join('\n'));window.open(whatsapp,'_blank','noopener');status.textContent='WhatsApp has opened with the enquiry details. Please review and send the message.';status.className='form-status success'});
+  </script>
+</body>
+</html>

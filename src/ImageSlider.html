@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Aarka Interiors</title>
+   <link rel="stylesheet" href="ImageSlider.css">
+</head>
+
+<body>
+
+  <div class="contact-page">
+    <!-- Navigation -->
+    <header class="navbar">     
+      <a href="#" class="logo">
+        <img src="aarka-logo-sample-2.png" alt="Aarka Interiors Logo" class="logo-img">
+      </a>
+
+      <nav class="nav-links">
+        <button class="submit-btn" style="margin-top:5px" onclick="BackToHome()"> Home</button>             
+      </nav>
+    </header>
+      <main id="contact" class="main-content">
+     <section class="gallery-section">
+      
+        <div class="slider-container">
+
+            <!-- Previous Button -->
+
+            <button
+                class="slider-btn previous-btn"
+                onclick="previousImage()">
+                &#10094;
+            </button>
+
+            <!-- Image -->
+
+            <div class="image-box">
+                <img
+                    id="sliderImage"
+                    src="RESIDENTIAL/VAGARE-DIGHI_1.png"
+                    alt="Interior Project">
+            </div>
+
+            <!-- Next Button -->
+
+            <button
+                class="slider-btn next-btn"
+                onclick="nextImage()">
+                &#10095;
+            </button>
+        </div>
+
+        <!-- Image Number -->
+        <div class="image-count">
+            Image
+            <span id="currentImage">1</span>
+            of
+            <span id="totalImages">4</span>
+        </div>
+
+      </section>  
+      </main>
+  </div>
+  
+<script>
+
+        /*
+            Add all your image names here
+        */
+        const images = [
+            "RESIDENTIAL/VAGARE-DIGHI_1.png",
+            "RESIDENTIAL/VAGARE-DIGHI_2.png",
+            "RESIDENTIAL/VAGARE-DIGHI_3.png",
+            "RESIDENTIAL/VAGARE-DIGHI_4.png",
+            "RESIDENTIAL/VAGARE-DIGHI_5.png",
+            "RESIDENTIAL/VAGARE-DIGHI_6.png",
+            "RESIDENTIAL/VAGARE-DIGHI_7.png",
+            "RESIDENTIAL/VAGARE-DIGHI_8.png",
+        ];
+
+        let currentIndex = 0;
+        const sliderImage =
+            document.getElementById("sliderImage");
+
+        const currentImage =
+            document.getElementById("currentImage");
+
+        const totalImages =
+            document.getElementById("totalImages");
+
+
+        /*
+            Display total number of images
+        */
+
+        totalImages.innerText = images.length;
+
+        /*
+            NEXT IMAGE
+        */
+
+        function nextImage() {
+            currentIndex++;
+            /*
+                If the last image is reached,
+                go back to the first image
+            */
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+            updateImage();
+        }
+
+        /*
+            PREVIOUS IMAGE
+        */
+
+        function previousImage() {
+            currentIndex--;
+            /*
+                If the first image is reached,
+                go to the last image
+            */
+            if (currentIndex < 0) {
+                currentIndex =
+                    images.length - 1;
+            }
+            updateImage();
+        }
+
+
+        /*
+            UPDATE IMAGE
+        */
+
+        function updateImage() {
+            sliderImage.style.opacity = "0";
+            setTimeout(function () {
+                sliderImage.src =
+                    images[currentIndex];
+                currentImage.innerText =
+                    currentIndex + 1;
+                sliderImage.style.opacity = "1";
+            }, 150);
+        }
+
+        /*
+            BACK BUTTON
+        */
+        function goBack() {
+            window.history.back();
+        }
+
+        /*
+            KEYBOARD NAVIGATION
+        */
+        document.addEventListener(
+            "keydown",
+            function (event) {
+
+                if (event.key === "ArrowRight") {
+                    nextImage();
+                }
+
+                if (event.key === "ArrowLeft") {
+                    previousImage();
+                }
+            }
+        );
+function BackToHome() {
+      // Redirects to contactus.html
+      window.location.href = "aarka_interiors_teal_gold.html";
+    }
+    </script>
+
+</body>
+</html>

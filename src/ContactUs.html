@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Aarka Interiors</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --gold: #d5a52f;
+      --gold-dark: #b98517;
+      --brown: #3b2719;
+      --cream: #f8f3eb;
+      --text: #35291f;
+    }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      min-height: 100vh;
+      color: var(--text);
+      background: #21170f;
+    }
+
+    .contact-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  /* Use only the image as background */
+  background: url("ContactUs.png") center center / cover no-repeat;
+}
+
+    /* Top navigation */
+    .navbar {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      min-height: 76px;
+      padding: 0 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.94);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .logo {
+      color: var(--brown);
+      text-decoration: none;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 27px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .logo span {
+      color: var(--gold-dark);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #55483e;
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.25s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold-dark);
+    }
+
+    .call-btn {
+      background: var(--brown);
+      color: white !important;
+      padding: 12px 19px;
+      border-radius: 6px;
+    }
+
+    /* Main content */
+    .main-content {
+      position: relative;
+      z-index: 2;
+      width: min(1180px, 90%);
+      min-height: 100vh;
+      margin: auto;
+      padding: 125px 0 60px;
+
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      align-items: center;
+      gap: 65px;
+    }
+
+    /* Left side */
+    .intro {
+      color: white;
+      max-width: 650px;
+    }
+
+    .small-title {
+      display: inline-block;
+      padding: 8px 15px;
+      margin-bottom: 20px;
+      border: 1px solid rgba(255,255,255,.55);
+      border-radius: 30px;
+      background: rgba(40, 25, 15, .35);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .intro h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(44px, 5.2vw, 72px);
+      line-height: 1;
+      font-weight: 500;
+      text-shadow: 0 5px 20px rgba(0,0,0,.3);
+    }
+
+    .intro h1 span {
+      color: #f0c44c;
+    }
+
+    .intro-text {
+      max-width: 580px;
+      margin-top: 25px;
+      font-size: 17px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.92);
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .feature {
+      padding: 9px 14px;
+      border-radius: 5px;
+      background: rgba(42, 27, 17, .58);
+      border: 1px solid rgba(255,255,255,.2);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    /* Form */
+    .form-card {
+      background: rgba(255,255,255,.97);
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 25px 60px rgba(28,18,10,.32);
+    }
+
+    .form-card h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--brown);
+      font-size: 32px;
+      margin-bottom: 7px;
+    }
+
+    .form-card > p {
+      color: #75685d;
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+
+    .name-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: #59493c;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid #ddd3c7;
+      border-radius: 7px;
+      padding: 13px 14px;
+      background: white;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      transition: .2s;
+    }
+
+    input {
+      height: 47px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(213,165,47,.15);
+    }
+
+  .submit-btn {
+  width: 100%;
+  border: 0;
+  border-radius: 7px;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--gold), var(--gold));
+  color: #ffffff;          /* force text color to white */
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border: 2px solid var(--teal);
+  transition: .25s ease;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(185,134,23,.3);
+  color: #ffffff;          /* keep text white on hover */
+}
+
+
+    .note {
+      text-align: center;
+      margin-top: 12px;
+      color: #8b7e72;
+      font-size: 11px;
+    }
+
+    .success-message {
+      display: none;
+      margin-bottom: 16px;
+      padding: 12px;
+      border-radius: 7px;
+      background: #e9f6ec;
+      border: 1px solid #b7ddbf;
+      color: #276438;
+      font-size: 13px;
+    }
+
+    /* WhatsApp */
+    .whatsapp {
+      position: fixed;
+      z-index: 20;
+      right: 20px;
+      bottom: 20px;
+      padding: 12px 18px;
+      border-radius: 30px;
+      background: #159447;
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      box-shadow: 0 8px 25px rgba(0,0,0,.25);
+    }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .main-content {
+        grid-template-columns: 1fr;
+        max-width: 700px;
+        gap: 35px;
+      }
+
+      .intro {
+        text-align: center;
+        margin: auto;
+      }
+
+      .intro-text {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .features {
+        justify-content: center;
+      }
+
+      .nav-links a:not(.call-btn) {
+        display: none;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 520px) {
+      .navbar {
+        min-height: 68px;
+        padding: 0 20px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .call-btn {
+        padding: 10px 12px;
+        font-size: 11px !important;
+      }
+
+      .main-content {
+        width: 92%;
+        padding-top: 100px;
+      }
+
+      .intro h1 {
+        font-size: 43px;
+      }
+
+      .intro-text {
+        font-size: 15px;
+      }
+
+      .form-card {
+        padding: 24px 19px;
+      }
+
+      .name-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
+.logo-img {
+  height: 50px;     /* adjust as needed */
+  width: auto;      /* keeps aspect ratio */
+  display: block;   /* removes inline spacing */
+}
+
+.cta {
+  display: inline-flex;
+  gap: 12px;
+  align-items: center;
+  padding: 14px 22px;
+  background: var(--teal);
+  color: var(--white);
+  font-size: 12px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border: 2px solid var(--teal);
+  transition: .25s ease;
+}
+
+.cta:hover {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--dark);
+}
+
+  </style>
+</head>
+
+<body>
+
+  <div class="contact-page">
+
+    <!-- Navigation -->
+    <header class="navbar">
+     
+      <a href="#" class="logo">
+        <img src="aarka-logo-sample-2.png" alt="Aarka Interiors Logo" class="logo-img">
+      </a>
+
+      <nav class="nav-links">
+         <button class="submit-btn" style="margin-top:5px" onclick="BackToHome()"> Home</button>    
+        <!--<a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Projects</a>
+        <a href="#">Services</a>
+        <a href="#contact">Contact Us</a>
+        <a href="tel:+919975777921" class="call-btn">
+          Call 99757 77921
+        </a>-->
+      </nav>
+    </header>
+
+
+    <!-- Contact section -->
+    <main id="contact" class="main-content">
+
+      <!-- Left content -->
+      <section class="intro">
+
+        <div class="small-title">
+          Aarka Interiors · Contact Us
+        </div>
+
+        <h1>
+          Let's Create Your
+          <span>Dream Space.</span>
+        </h1>
+
+        <p class="intro-text">
+          Tell us about your home, office, or custom interior project.
+          Share your requirement with us and our team will get in touch
+          with you to understand your vision and create a beautiful,
+          functional space.
+        </p>
+
+        <div class="features">
+          <div class="feature">Free Consultation</div>
+          <div class="feature">Free 3D Design Consultation</div>
+          <div class="feature">Home & Office Interiors</div>
+        </div>
+
+      </section>
+
+
+      <!-- Contact form -->
+      <section class="form-card">
+
+        <h2>Get In Touch</h2>
+
+        <p>
+          Share your details and requirement. We'll contact you soon.
+        </p>
+
+        <div id="successMessage" class="success-message">
+          Thank you! Your enquiry has been submitted successfully.
+        </div>
+
+        <form id="contactForm">
+
+          <div class="name-row">
+
+            <div class="form-group">
+              <label for="firstName">FIRST NAME *</label>
+              <input
+                type="text"
+                id="firstName"
+                name="firstName"
+                placeholder="First Name"
+                maxlength="80"
+                required
+              >
+            </div>
+
+            <div class="form-group">
+              <label for="lastName">LAST NAME *</label>
+              <input
+                type="text"
+                id="lastName"
+                name="lastName"
+                placeholder="Last Name"
+                maxlength="80"
+                required
+              >
+            </div>
+
+          </div>
+
+
+          <div class="form-group">
+            <label for="contactNo">CONTACT NO. *</label>
+            <input
+              type="tel"
+              id="contactNo"
+              name="contactNo"
+              placeholder="Contact Number"
+              maxlength="20"
+              required
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="email">EMAIL ADDRESS *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email Address"
+              maxlength="150"
+              required
+            >
+          </div>
+
+
+          <div class="form-group">
+            <label for="requirement">YOUR REQUIREMENT *</label>
+            <textarea
+              id="requirement"
+              name="requirement"
+              maxlength="2000"
+              placeholder="Tell us about your project, location, approximate size, budget or anything else you'd like us to know."
+              required
+            ></textarea>
+          </div>
+
+
+          <button type="submit" class="submit-btn" >
+            Submit Enquiry
+          </button>
+
+          <div class="note">
+            * All fields are required.
+          </div>
+
+        </form>
+
+      </section>
+
+    </main>
+
+
+    <!-- WhatsApp 
+    <a
+      href="https://wa.me/919975777921"
+      class="whatsapp"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      WhatsApp Us
+    </a>-->
+
+  </div>
+
+
+  <script>
+    /*
+      Front-end demo submission.
+
+      IMPORTANT:
+      This HTML page alone cannot securely save data directly into SQL Server.
+      For SQL Server saving, connect this form to your ASP.NET/C# backend/API.
+
+      The JavaScript below only demonstrates successful form submission.
+    */
+
+    document.getElementById("contactForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const form = event.target;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      document.getElementById("successMessage").style.display = "block";
+
+      // Demo only:
+      // Send these values to your ASP.NET/C# backend using fetch().
+      const contactData = {
+        firstName: document.getElementById("firstName").value.trim(),
+        lastName: document.getElementById("lastName").value.trim(),
+        contactNo: document.getElementById("contactNo").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        requirement: document.getElementById("requirement").value.trim()
+      };
+
+      console.log("Contact enquiry:", contactData);
+
+      form.reset();
+    });
+
+    function BackToHome() {
+      // Redirects to contactus.html
+      window.location.href = "aarka_interiors_teal_gold.html";
+    }
+  </script>
+
+</body>
+</html>
